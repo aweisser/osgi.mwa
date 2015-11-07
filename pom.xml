@@ -16,6 +16,7 @@
     <modules>
         <module>greeter</module>
         <module>_assembly_</module>
+        <module>_bundle-template_</module>
     </modules>
 
     <dependencies>
