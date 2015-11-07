@@ -24,6 +24,13 @@ gulp.task('default', function () {
 	console.log(params);
 });
 
+gulp.task('make:up', function (callback) {
+	runSequence(
+		'emake',
+		'felix:up',
+		callback)
+});
+
 gulp.task('make', function () {
 	return gulp.src('')
 		.pipe(shell('mvn package -DskipTests=true', {quiet: params.silent}));
