@@ -1,21 +1,16 @@
-# OSGi Boilerplate
+# Modular Web App (MWA)
 
-You want to start building really modular java applications right away? 
-You don't want to waste your time setting up an easy to use development environment and module structure?
+In this project I study what it feels like building a really webapp out of finegrained modules with clear interfaces, high cohesion and low coupling.
 
-Then the OSGi Boilerplate is for you.
+## How to get there?
+1. :white_check_mark: Provide a simple basic project setup based on Maven and Gulp, where I'm able to very simply build my OSGi bundles and deploy them with all their depdendencies directly to a local OSGi runtime.
+1. Assemble a bundle that serves static web resources (index.html ...) with an embedded servlet container
+1. Provide a first simple dispatcher servlet to process http requests from the client
+1. Implement a simple URL-Mapping service that maps URLs to a specific controller
+1. Make the GUI send a XHR request that the mapped controller should answer to.
+1. Make the GUI auto state the availability of a backend service (aka "feature"). If an HTTP 503 is returned the "feature" is not available.
+1. ...
 
-Clone the repo and you can start develop your first OSGi bundle instantly without worrying the setup stuff.
-
-
-## What you get ...
-* Minimal multi-module project based on Maven. Every maven module is an OSGi bundle
-* Preconfigured OSGi container (Apache Felix 5) with web management console already included
-* Auto-Build and assemble OSGi bundles without messing with the MANIFEST.MF
-* Auto resolve dependent OSGi bundles based on Maven dependencies
-* Collect and deploy all neccessary bundles and dependencies into the included OSGi container with a single command
-* gulp support
-* Groovy support within your bundles
 
 ##Prerequisits
 * JDK >= 1.7
