@@ -26,7 +26,7 @@ gulp.task('default', function () {
 
 gulp.task('make:up', function (callback) {
 	runSequence(
-		'emake',
+		'make',
 		'felix:up',
 		callback)
 });

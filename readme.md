@@ -34,3 +34,6 @@ In this project I study what it feels like building a really webapp out of fineg
 
 ###Bundles
     http://repo1.maven.org/maven2/org/apache/felix/
+    
+###Sources
+    https://ekkescorner.wordpress.com/2008/09/24/logging-in-osgi-enterprise-applications-part-1/

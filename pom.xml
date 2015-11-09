@@ -19,6 +19,13 @@
         <module>_bundle-template_</module>
     </modules>
 
+    <repositories>
+        <repository>
+            <id>felix.repo</id>
+            <url>http://repo1.maven.org/maven2/org/apache/felix/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
 
         <dependency>
@@ -27,6 +34,19 @@
             <version>5.0.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.log</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.codehaus.groovy</groupId>

@@ -88,12 +88,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.log</artifactId>
-            <version>1.0.0</version>
-            <scope>runtime</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -122,6 +116,14 @@
             <version>3.1.8</version>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.gogo</artifactId>
+            <version>1.12.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
 
 
     </dependencies>

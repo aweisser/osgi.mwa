@@ -38,10 +38,23 @@
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>de.aw.osgi.${project.artifactId}</Export-Package>
                         <Private-Package>de.aw.osgi.${project.artifactId}.intern</Private-Package>
-                        <Bundle-Activator>de.aw.osgi.${project.artifactId}.Activator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <version>1.12.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>ipojo-bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
