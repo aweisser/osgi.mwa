@@ -36,10 +36,16 @@ gulp.task('make', function () {
 		.pipe(shell('mvn package -DskipTests=true', {quiet: params.silent}));
 });
 
-gulp.task('felix:up', ['felix:clean-cache'], shell.task([template('java -jar bin/felix.jar')], {
+gulp.task('felix:up', ['felix:clean:cache'], shell.task([template('java -jar bin/felix.jar')], {
 	cwd: 'felix'
 }));
 
-gulp.task('felix:clean-cache',  function (cb) {
+gulp.task('felix:clean', ['felix:clean:cache', 'felix:clean:bundles']);
+
+gulp.task('felix:clean:cache',  function (cb) {
 	del('felix/felix-cache/**/*', {force: true}, cb);
+});
+
+gulp.task('felix:clean:bundles',  function (cb) {
+	del('felix/bundle/**/*', {force: true}, cb);
 });
