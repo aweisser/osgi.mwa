@@ -28,6 +28,7 @@
             <groupId>de.aw.osgi</groupId>
             <artifactId>mwa.web</artifactId>
             <version>${project.version}</version>
+            <type>war</type>
         </dependency>
 
 

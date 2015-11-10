@@ -20,12 +20,12 @@
         <module>web</module>
     </modules>
 
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>felix.repo</id>
             <url>http://repo1.maven.org/maven2/org/apache/felix/</url>
         </repository>
-    </repositories>
+    </repositories>-->
 
     <dependencies>
 
@@ -165,7 +165,7 @@
                             <overWriteIfNewer>true</overWriteIfNewer>
                             <excludeScope>provided</excludeScope>
                             <includeScope>runtime</includeScope>
-                            <excludeTransitive>true</excludeTransitive>
+                            <excludeTransitive>false</excludeTransitive>
                         </configuration>
                     </execution>
                 </executions>
