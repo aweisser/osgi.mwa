@@ -15,7 +15,7 @@ import static org.osgi.service.log.LogService.LOG_INFO;
  */
 @Component
 @Instantiate
-class FriendlyGreeter implements Greeter {
+public class FriendlyGreeter implements Greeter {
 
 
     @Requires
