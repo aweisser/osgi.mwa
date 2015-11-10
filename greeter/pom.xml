@@ -36,8 +36,8 @@
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Export-Package>de.aw.osgi.${project.artifactId}</Export-Package>
-                        <Private-Package>de.aw.osgi.${project.artifactId}.intern</Private-Package>
+                        <Export-Package>${project.groupId}.${project.artifactId}</Export-Package>
+                        <Private-Package>${project.groupId}.${project.artifactId}.intern</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
