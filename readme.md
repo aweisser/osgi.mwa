@@ -45,3 +45,4 @@ In this project I study what it feels like building a really modular webapp out 
     
 ### Findings as I proceed
 * iPojo seems to have problems instantiating a Groovy-Class. If you rename the file "FriendlyGreeter.java" to "FriendlyGreeter.groovy" the starting and stopping methods are not called any more. =(
+* To serve static web resources outside a bundle one have to provide an customized implementation of HttpContext with an appropriate getResource(String) method. 
