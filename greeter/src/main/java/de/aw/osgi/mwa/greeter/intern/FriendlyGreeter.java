@@ -1,11 +1,7 @@
 package de.aw.osgi.mwa.greeter.intern;
 
 import de.aw.osgi.mwa.greeter.Greeter;
-import org.apache.felix.ipojo.annotations.Component;
-import org.apache.felix.ipojo.annotations.Instantiate;
-import org.apache.felix.ipojo.annotations.Invalidate;
-import org.apache.felix.ipojo.annotations.Requires;
-import org.apache.felix.ipojo.annotations.Validate;
+import org.apache.felix.ipojo.annotations.*;
 import org.osgi.service.log.LogService;
 
 import static org.osgi.service.log.LogService.LOG_INFO;
@@ -15,6 +11,7 @@ import static org.osgi.service.log.LogService.LOG_INFO;
  */
 @Component
 @Instantiate
+@Provides
 public class FriendlyGreeter implements Greeter {
 
 

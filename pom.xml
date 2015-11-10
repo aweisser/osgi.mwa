@@ -14,9 +14,10 @@
     </properties>
 
     <modules>
-        <module>greeter</module>
         <module>_assembly_</module>
         <module>_bundle-template_</module>
+        <module>greeter</module>
+        <module>web</module>
     </modules>
 
     <repositories>
