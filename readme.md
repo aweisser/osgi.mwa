@@ -42,3 +42,6 @@ In this project I study what it feels like building a really modular webapp out 
     
 ### Inspiring Sources
     https://ekkescorner.wordpress.com/2008/09/24/logging-in-osgi-enterprise-applications-part-1/
+    
+### Findings as I proceed
+* iPojo seems to have problems instantiating a Groovy-Class. If you rename the file "FriendlyGreeter.java" to "FriendlyGreeter.groovy" the starting and stopping methods are not called any more. =(
