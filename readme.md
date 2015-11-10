@@ -1,9 +1,9 @@
 # Modular Web App (MWA)
 
-In this project I study what it feels like building a really webapp out of finegrained modules with clear interfaces, high cohesion and low coupling.
+In this project I study what it feels like building a really modular webapp out of finegrained bundles with clear interfaces, high cohesion and low coupling.
 
 ## How to get there?
-1. :white_check_mark: Provide a simple basic project setup based on Maven and Gulp, where I'm able to very simply build my OSGi bundles and deploy them with all their depdendencies directly to a local OSGi runtime.
+1. :white_check_mark: (Branch `boilerplate`) Provide a simple basic project setup based on Maven and Gulp, where I'm able to very simply build my OSGi bundles and deploy them with all their depdendencies directly to a local OSGi runtime.
 1. Assemble a bundle that serves static web resources (index.html ...) with an embedded servlet container
 1. Provide a first simple dispatcher servlet to process http requests from the client
 1. Implement a simple URL-Mapping service that maps URLs to a specific controller
@@ -35,5 +35,10 @@ In this project I study what it feels like building a really webapp out of fineg
 ###Bundles
     http://repo1.maven.org/maven2/org/apache/felix/
     
-###Sources
+### Git
+    git tag (list tags)
+    git tag -d <name> (remove a tag)
+    git push origin --tags (push tag to remote)
+    
+### Inspiring Sources
     https://ekkescorner.wordpress.com/2008/09/24/logging-in-osgi-enterprise-applications-part-1/
