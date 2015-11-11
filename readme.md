@@ -1,6 +1,6 @@
 # Modular Web App (MWA)
 
-In this project I study what it feels like building a really webapp out of finegrained modules with clear interfaces, high cohesion and low coupling.
+In this project I study what it feels like building a really modular webapp out of finegrained bundles with clear interfaces, high cohesion and low coupling.
 
 ## How to get there?
 1. :white_check_mark: (Branch `boilerplate`) Provide a simple basic project setup based on Maven and Gulp, where I'm able to very simply build my OSGi bundles and deploy them with all their depdendencies directly to a local OSGi runtime.
@@ -40,4 +40,9 @@ In this project I study what it feels like building a really webapp out of fineg
     git tag -d <name> (remove a tag)
     git push origin --tags (push tag to remote)
     
+### Inspiring Sources
+    https://ekkescorner.wordpress.com/2008/09/24/logging-in-osgi-enterprise-applications-part-1/
     
+### Findings as I proceed
+* iPojo seems to have problems instantiating a Groovy-Class. If you rename the file "FriendlyGreeter.java" to "FriendlyGreeter.groovy" the starting and stopping methods are not called any more. =(
+* To serve static web resources outside a bundle one have to provide an customized implementation of HttpContext with an appropriate getResource(String) method. 

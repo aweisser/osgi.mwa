@@ -24,6 +24,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>de.aw.osgi</groupId>
+            <artifactId>mwa.web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
 
         <!-- felix runtime dependencies -->
         <!--<dependency>
@@ -83,20 +89,6 @@
 
         <dependency>
             <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.http.jetty</artifactId>
-            <version>2.3.2</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.log</artifactId>
-            <version>1.0.0</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.metatype</artifactId>
             <version>1.0.0</version>
             <scope>runtime</scope>
@@ -122,6 +114,14 @@
             <version>3.1.8</version>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.gogo</artifactId>
+            <version>1.12.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
 
 
     </dependencies>
