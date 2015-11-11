@@ -26,8 +26,16 @@ gulp.task('default', function () {
 
 gulp.task('make:up', function (callback) {
 	runSequence(
-		'make',
+		'make:clean',
+		'felix:clean:cache',
 		'felix:up',
+		callback)
+});
+
+gulp.task('make:clean', function (callback) {
+	runSequence(
+		'felix:clean:bundles',
+		'make',
 		callback)
 });
 
