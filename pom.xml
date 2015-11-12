@@ -18,6 +18,8 @@
         <module>_bundle-template_</module>
         <module>greeter</module>
         <module>web</module>
+        <module>endpoint.registry</module>
+        <module>endpoint.greet</module>
     </modules>
 
     <repositories>

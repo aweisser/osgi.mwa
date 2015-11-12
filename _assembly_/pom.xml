@@ -30,6 +30,18 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>de.aw.osgi</groupId>
+            <artifactId>mwa.endpoint.registry</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.aw.osgi</groupId>
+            <artifactId>mwa.endpoint.greet</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
 
         <!-- felix runtime dependencies -->
         <!--<dependency>
