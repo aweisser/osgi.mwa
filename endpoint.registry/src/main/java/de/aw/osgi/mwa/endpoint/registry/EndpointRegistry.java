@@ -13,4 +13,5 @@ public interface EndpointRegistry {
 
     boolean unregister(Endpoint endpoint);
 
+    Endpoint get(String alias) throws EndpointNotFoundException;
 }

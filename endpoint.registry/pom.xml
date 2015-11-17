@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mwa.endpoint.registry</artifactId>
-    <groupId>de.aw.osgi</groupId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
 

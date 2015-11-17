@@ -25,7 +25,7 @@
 
         <dependency>
             <groupId>de.aw.osgi</groupId>
-            <artifactId>mwa.greeter</artifactId>
+            <artifactId>mwa.endpoint.registry</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

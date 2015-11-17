@@ -1,6 +1,6 @@
 package de.aw.osgi.mwa.web.intern;
 
-import de.aw.osgi.mwa.greeter.Greeter;
+import de.aw.osgi.mwa.endpoint.registry.Endpoint;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +13,16 @@ import java.io.IOException;
  */
 public class GreeterServlet extends HttpServlet {
 
-    private Greeter greeter;
+    private Endpoint<String, String> greeterEndpoint;
 
-    public void setGreeter(Greeter greeter) {
-        this.greeter = greeter;
+    public void setEndpoint(Endpoint greeterEndpoint) {
+        this.greeterEndpoint = greeterEndpoint;
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String input = req.getRequestURI() - (req.getServletPath() + "/");
-        String salutation = greeter.greet(input);
+        String input = req.getRequestURI().replaceFirst(req.getServletPath() + "/", "");
+        String salutation = greeterEndpoint.handle(input);
         resp.getWriter().write(salutation);
     }
 }
