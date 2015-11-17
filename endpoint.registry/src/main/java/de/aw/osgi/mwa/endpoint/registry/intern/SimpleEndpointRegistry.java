@@ -13,6 +13,7 @@ import java.util.HashSet;
  * @author armin.weisser
  */
 @Component
+@Provides
 @Instantiate
 public class SimpleEndpointRegistry implements EndpointRegistry {
 

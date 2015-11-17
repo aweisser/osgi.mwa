@@ -15,43 +15,46 @@ import static org.osgi.service.log.LogService.LOG_INFO;
  * @author armin.weisser
  */
 @Component
-//@Instantiate
+@Instantiate
 public class WebBundleBootstrap {
 
     private static final String WEB_ALIAS = "/mwa";
     private static final String RELATIVE_DOCUMENT_ROOT = "/";
 
-    //  @Requires
+    @Requires
     private LogService logger;
 
-    //@Requires
+    @Requires
     HttpService httpService;
 
-    //@Requires
+    @Requires
     private EndpointRegistry endpointRegistry;
 
-    //@Validate
+    @Validate
     public void starting() throws NamespaceException, ServletException {
-        System.out.println("WebBundle is online with EndpointRegistry " + endpointRegistry.toString());
+        System.out.println("WebBundle is online via iPojo");
         logger.log(LOG_INFO, "WebBundle is online via iPojo");
 
         System.out.println("Registering static web resources to path " + WEB_ALIAS);
         httpService.registerResources(WEB_ALIAS, RELATIVE_DOCUMENT_ROOT, null);
 
         registerGreeterServlet();
+
     }
 
     private void registerGreeterServlet() throws ServletException, NamespaceException {
-        try {
-            GreeterServlet greeterServlet = new GreeterServlet();
+        // When we put this line inside the try catch block the build breaks =(
+        // This is a bug in maven-ipojo-plugin. https://issues.apache.org/jira/browse/FELIX-5007
+        GreeterServlet greeterServlet = new GreeterServlet();
+        try{
             greeterServlet.setEndpoint(endpointRegistry.get("/greet"));
             httpService.registerServlet(WEB_ALIAS + "/greet", greeterServlet, null, null);
         } catch (EndpointNotFoundException e) {
-            e.printStackTrace();  //TODO handle exception!!!
+            e.printStackTrace();
         }
     }
 
-    //@Invalidate
+    @Invalidate
     public void stopping() {
         System.out.println("WebBundle is offline via iPojo");
         logger.log(LOG_INFO, "WebBundle is offline via iPojo");
