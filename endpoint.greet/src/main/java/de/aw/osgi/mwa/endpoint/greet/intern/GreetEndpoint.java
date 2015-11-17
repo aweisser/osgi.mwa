@@ -14,19 +14,25 @@ import java.rmi.RemoteException;
  * @author armin.weisser
  */
 @Component
+@Instantiate
 @Provides
-public class GreetEndpoint implements Endpoint {
+public class GreetEndpoint implements Endpoint<String, String> {
 
     @Requires
     Greeter greeter;
 
     @Override
     public String getAlias() {
-        return "greet";
+        return "/greet";
     }
 
     @Override
-    public Object handle(Object input) {
-        return null;
+    public String handle(String name) {
+        return greeter.greet(name);
+    }
+
+    @Override
+    public String toString() {
+        return "GreeterEnpoint at " + getAlias();
     }
 }
