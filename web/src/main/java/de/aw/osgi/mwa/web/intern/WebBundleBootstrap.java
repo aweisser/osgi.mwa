@@ -1,6 +1,5 @@
 package de.aw.osgi.mwa.web.intern;
 
-import de.aw.osgi.mwa.endpoint.registry.EndpointNotFoundException;
 import de.aw.osgi.mwa.endpoint.registry.EndpointRegistry;
 import org.apache.felix.ipojo.annotations.*;
 import org.osgi.service.http.HttpService;
@@ -38,20 +37,9 @@ public class WebBundleBootstrap {
         System.out.println("Registering static web resources to path " + WEB_ALIAS);
         httpService.registerResources(WEB_ALIAS, RELATIVE_DOCUMENT_ROOT, null);
 
-        registerGreeterServlet();
+        GreeterServlet greeterServlet = new GreeterServlet(endpointRegistry, "/greet");
+        httpService.registerServlet(WEB_ALIAS + greeterServlet.getAlias(), greeterServlet, null, null);
 
-    }
-
-    private void registerGreeterServlet() throws ServletException, NamespaceException {
-        // When we put this line inside the try catch block the build breaks =(
-        // This is a bug in maven-ipojo-plugin. https://issues.apache.org/jira/browse/FELIX-5007
-        GreeterServlet greeterServlet = new GreeterServlet();
-        try{
-            greeterServlet.setEndpoint(endpointRegistry.get("/greet"));
-            httpService.registerServlet(WEB_ALIAS + "/greet", greeterServlet, null, null);
-        } catch (EndpointNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     @Invalidate
@@ -60,6 +48,7 @@ public class WebBundleBootstrap {
         logger.log(LOG_INFO, "WebBundle is offline via iPojo");
 
         httpService.unregister(WEB_ALIAS);
+        httpService.unregister(WEB_ALIAS+"/greet");
     }
 
 }

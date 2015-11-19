@@ -39,12 +39,12 @@ public class SimpleEndpointRegistry implements EndpointRegistry {
     }
 
     @Override
-    public synchronized Endpoint get(String alias) throws EndpointNotFoundException {
+    public synchronized Endpoint get(String alias) {
         for(Endpoint endpoint: list()) {
             if(endpoint.getAlias().equals(alias)) {
                 return endpoint;
             }
         }
-        throw new EndpointNotFoundException(alias);
+        return null;
     }
 }
